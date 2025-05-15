@@ -15,7 +15,7 @@
           <img 
             src={preview} 
             alt="X-ray preview" 
-            className="w-full max-h-64 object-contain bg-black"
+            className="w-full max-h-64 object-contain bg-black rounded-xl"
           />
         </div>
       ) : (
