@@ -7,7 +7,7 @@
   };
   
   return (
-    <div className="mt-6 bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md">
+    <div className="mt-6 bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md w-full">
       <h2 className="text-xl font-semibold mb-4 text-white">X-ray Upload</h2>
       
       {preview ? (

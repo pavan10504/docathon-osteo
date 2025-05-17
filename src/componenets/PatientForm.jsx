@@ -7,27 +7,27 @@ export default function PatientForm({ onSubmit, patientData }) {
     sex: '',
     weight: ''
   });
-  
+
   useEffect(() => {
     if (patientData) {
       setFormData(patientData);
     }
   }, [patientData]);
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
   };
-  
+
   return (
-    <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md">
+    <div className="w-full bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-md">
       <h2 className="text-xl font-semibold mb-4 text-white">Patient Information</h2>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label className="block text-gray-300 mb-1">Name (Optional)</label>
@@ -40,7 +40,7 @@ export default function PatientForm({ onSubmit, patientData }) {
             placeholder="Patient name"
           />
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label className="block text-gray-300 mb-1">Age <span className="text-red-500">*</span></label>
@@ -56,7 +56,7 @@ export default function PatientForm({ onSubmit, patientData }) {
               max="120"
             />
           </div>
-          
+
           <div>
             <label className="block text-gray-300 mb-1">Sex <span className="text-red-500">*</span></label>
             <select
@@ -72,7 +72,7 @@ export default function PatientForm({ onSubmit, patientData }) {
               <option value="other">Other</option>
             </select>
           </div>
-          
+
           <div>
             <label className="block text-gray-300 mb-1 ">Weight <span className="text-red-500">*</span></label>
             <div className="flex">
@@ -93,10 +93,10 @@ export default function PatientForm({ onSubmit, patientData }) {
             </div>
           </div>
         </div>
-        
+
         <button
           type="submit"
-          className="mt-6 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+          className={`mt-6 w-full ${patientData ? 'bg-gray-700 text-blue-800' : 'bg-blue-600'} text-white py-2 rounded-lg `}
           disabled={patientData !== null}
         >
           {patientData ? 'Information Saved' : 'Save Information'}
