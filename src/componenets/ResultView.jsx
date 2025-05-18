@@ -228,7 +228,7 @@ export default function ResultsView({ result, patient, xrayImage, onReset }) {
   const getDefaultDietHtml = (grade) => {
     const plan = getDefaultDietRecommendations(grade);
     
-    return (
+    return `
       <html>
       <head>
         <title>${plan.title}</title>
@@ -345,7 +345,7 @@ export default function ResultsView({ result, patient, xrayImage, onReset }) {
         </div>
       </body>
       </html>
-    );
+    `;
   };
 
   // Generate and download PDF from HTML content
